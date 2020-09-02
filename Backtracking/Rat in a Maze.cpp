@@ -22,12 +22,12 @@ bool findPath(int maze[][20],int n,int x,int y,int path[20][20]){
 
         path[x][y]=1;
 //Right
-        if(findPath(maze,n,x,y+1,path)){
+        if(findPath(maze,n,x,y+1,path)){    //(0,0) se (0,1 ) so y+1
           path[x][y]=0;  
             return true;
         }
 //left 
-        if(findPath(maze, n,x,y-1,path)){
+        if(findPath(maze, n,x,y-1,path)){   
             path[x][y]=0;
             return true;
         }
