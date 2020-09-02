@@ -22,23 +22,23 @@ bool findPath(int maze[][20],int n,int x,int y,int path[20][20]){
 
         path[x][y]=1;
 //Right
-        if(findPath(maze,n,x,y+1,path)){    //(0,0) se (0,1 ) so y+1
-          path[x][y]=0;  
+        if(findPath(maze,n,x,y+1,path)){  //(0,0) se (0,1 ) so y+1
+           
             return true;
         }
 //left 
-        if(findPath(maze, n,x,y-1,path)){   
-            path[x][y]=0;
+        if(findPath(maze, n,x,y-1,path)){
+        
             return true;
         }
 //top
         if(findPath(maze,n,x-1,y,path))
-        {   path[x][y]=0;
+        {   
             return true;
         }
 //bottom
         if(findPath(maze,n,x+1,y,path)){
-            path[x][y]=0;
+            
             return true;
         }        
     path[x][y]=0;
@@ -46,10 +46,15 @@ bool findPath(int maze[][20],int n,int x,int y,int path[20][20]){
 
 }
 
+
+
+
+
+
 bool findPath(int maze[][20],int n){ // n will be n x n
 
     int path[20][20] ={0}; //Setting all path entries to zero
-    return findPath(maze,n,0,0,path); //Put x & y=0
+    return  findPath(maze,n,0,0,path); //Put x & y=0
 
 } 
 
@@ -57,5 +62,6 @@ int main(){
 
     int n=3;
     int maze[20][20]={{1,1,0},{1,1,0},{0,1,1}};
-    cout<<findPath(maze,n);
+    //cout<<findPath(maze,n);
+    findPath(maze,n);   
 }
