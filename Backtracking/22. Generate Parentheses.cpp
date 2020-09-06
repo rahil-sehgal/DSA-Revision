@@ -1,6 +1,7 @@
 //Use BACKTRACKING 
-//note : ()) cannot be a valid answer so backtrack from there
+//note : ()) cannot be a valid answer so backtrack from there  //close more than open 
 //closed no of paranthesis should not be more than open no of paranthesis
+//close <=open
 
 class Solution {
 public:
