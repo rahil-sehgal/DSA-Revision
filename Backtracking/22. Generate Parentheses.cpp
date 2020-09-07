@@ -7,13 +7,14 @@ class Solution {
 public:
     vector<string> generateParenthesis(int n) {
         vector<string> res;
+       
         helper(res,"",0,0,n); //start with a blank string ""
         return res;
     }
-    void helper(vector<string> res,string s,int open,int close,int n){
-        if(s.length()==n*2){
+    void helper(vector<string> &res,string s,int open,int close,int n){
+        if(s.length()==(n*2)){
            // res.insert (res.begin(), s);
-           res.push_back("s") ;
+           res.push_back(s) ;
             return;
         }
         if(open<n){
@@ -24,4 +25,5 @@ public:
         }
         
     }  
-};
+}; 
+
