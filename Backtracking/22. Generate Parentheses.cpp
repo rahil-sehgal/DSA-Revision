@@ -1,5 +1,5 @@
 //Use BACKTRACKING 
-//note : ()) cannot be a valid answer so backtrack from there  //close more than open 
+//note : ()) cannot be a valid answer so backtrack from there  //two conditions
 //closed no of paranthesis should not be more than open no of paranthesis
 //close <=open
 
