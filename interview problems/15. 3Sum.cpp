@@ -1,3 +1,14 @@
+/*    while(l<r && a[l]==a[l+1]){
+                l++;
+            }
+            
+            while(r>l && a[r]==a[r+1]){
+                r--;
+            }
+*/
+
+//THE ABOVE PART IS WRONG.. BELOW ONE IS CORRECT
+
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& a) {
@@ -7,8 +18,9 @@ public:
         sort(a.begin(),a.end());
         for(int i=0;i<n;i++){
             
-        
-            int l=0;
+        //MISTAKE TC NEXT TIME ------------->
+           // int l=0; 
+            int l=i+1;
             int r=n-1;
         while(r>l){
             int sum=a[i]+a[l]+a[r];
@@ -19,14 +31,22 @@ public:
                 temp.push_back(a[r]);
                 
                 res.push_back(temp);
-            }
+ 
             //now to avoid duplication
-            while(l<r && a[l]==a[l+1]){
+            int leftValue=a[l];
+            while(l<r && a[l]==leftValue){
                 l++;
             }
-            while(r>l && a[r]==a[r-1]){
+            int rightValue=a[r];
+            while(r>l && a[r]==rightValue){
                 r--;
             }
+           } //end of if 
+            else if(sum<0){
+                l++;
+            }    
+            else r--;
+        
             
         }   //end of while
         while(i<n-1 && a[i]==a[i+1]){
